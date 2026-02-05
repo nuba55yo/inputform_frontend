@@ -1,0 +1,96 @@
+<div class="card">
+
+  <h2>Input Form</h2>
+
+  <!-- SUCCESS -->
+  <div class="success" *ngIf="successId">
+    save data success id : {{ successId }}
+  </div>
+
+  <!-- ERROR -->
+  <div class="error" *ngIf="errorMessage">
+    {{ errorMessage }}
+  </div>
+
+  <form [formGroup]="form">
+
+    <div class="grid">
+
+      <!-- LEFT -->
+      <div>
+
+        <label>First Name</label>
+        <input formControlName="first_name" />
+
+        <label>Email</label>
+        <input formControlName="email" />
+
+        <label>Occupation</label>
+        <select formControlName="occupation">
+          <option value="">-- select --</option>
+          <option *ngFor="let o of occupations" [value]="o">
+            {{ o }}
+          </option>
+        </select>
+
+        <label>Birth Day</label>
+        <input type="date" formControlName="birth_day" />
+
+      </div>
+
+      <!-- RIGHT -->
+      <div>
+
+        <label>Last Name</label>
+        <input formControlName="last_name" />
+
+        <label>Phone</label>
+        <input formControlName="phone" />
+
+        <label>Sex</label>
+
+        <div class="radio">
+          <label>
+            <input type="radio" value="male" formControlName="sex" />
+            Male
+          </label>
+
+          <label>
+            <input type="radio" value="female" formControlName="sex" />
+            Female
+          </label>
+        </div>
+
+        <label>Profile</label>
+        <input
+          type="file"
+          accept="image/png,image/jpeg,image/webp"
+          (change)="onFileChange($event)"
+        />
+
+        <!-- ⭐ PREVIEW -->
+        <div *ngIf="previewUrl" class="preview">
+          <img [src]="previewUrl" />
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="buttons">
+      <button type="button"
+              (click)="submit()"
+              [disabled]="submitting">
+
+        {{ submitting ? 'Saving...' : 'Save' }}
+
+      </button>
+
+      <button type="button" (click)="clear()">
+        Clear
+      </button>
+    </div>
+
+  </form>
+
+</div>

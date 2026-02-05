@@ -1,0 +1,29 @@
+# Node / Angular
+node_modules/
+dist/
+.angular/
+.cache/
+coverage/
+.npm/
+.eslintcache
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Env / local config
+.env
+.env.*
+!.env.example
+src/environments/environment.development.ts
+src/environments/environment.local.ts
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
