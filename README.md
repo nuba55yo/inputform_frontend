@@ -30,7 +30,7 @@ This UI allows users to submit personal information along with a profile image, 
 
 ## 🖼 UI Preview
 
-![Input Form](docs/images/ui-form.png)
+![Input Form](docs/images/ui-form.PNG)
 
 ---
 
